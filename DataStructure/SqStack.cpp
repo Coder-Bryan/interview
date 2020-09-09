@@ -11,14 +11,23 @@
 #include "malloc.h"
 
 //5个常量定义
+//<refine> effective C++ number 2: prefer consts,enums, and inlines to #define
+/*
 #define TRUE 1
 #define FALSE 0
 #define OK 1
 #define ERROR 0
 #define OVERFLOW -1
+*/
+const int TRUE = 1;
+const int FALSE = 0;
+const int OK = 1;
+const int ERROR = 0;
+const int OVERFLOW = -1;
 
 //测试程序长度定义
-#define LONGTH 5
+// #define LONGTH 5
+const int LONGTH = 5;
 
 //类型定义
 typedef int Status;
@@ -76,7 +85,7 @@ Status Push_Sq(SqSrack &S, ElemType e) {
 }
 
 //取栈S的栈顶元素，并用e返回
-Status GetTop_Sq(SqSrack S, ElemType &e) {
+Status GetTop_Sq(SqSrack &S, ElemType &e) {
 	if (0 == S.top) return ERROR;
 	e = S.elem[S.top - 1];
 	return e;
