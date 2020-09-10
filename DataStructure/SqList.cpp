@@ -10,15 +10,23 @@
 #include "stdlib.h"
 #include "malloc.h"
 
-//5个常量定义
+//<refine> effective C++ number 2: prefer consts,enums, and inlines to #define
+/*
 #define TRUE 1
 #define FALSE 0
 #define OK 1
 #define ERROR 0
 #define OVERFLOW -1
+*/
+const int TRUE = 1;
+const int FALSE = 0;
+const int OK = 1;
+const int ERROR = 0;
+const int OVERFLOW = -1;
 
 //测试程序长度定义
-#define LONGTH 5
+// #define LONGTH 5
+const int LONGTH = 5;
 
 //类型定义
 typedef int Status;
